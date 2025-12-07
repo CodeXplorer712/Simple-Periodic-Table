@@ -3,31 +3,33 @@ body {
     background-color: #f8f9fa !important;
     color: #212529;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    overflow-x: hidden; /* Helps prevent accidental horizontal scroll */
 }
 
-/* The Grid System */
+/* The Grid System - Optimized Size */
 .periodic-table-grid {
     display: grid;
     grid-template-columns: repeat(18, 1fr);
-    gap: 6px;
-    max-width: 1400px;
+    gap: 3px; /* Very tight gap */
+    max-width: 1100px; /* Reduced width to fit standard screens */
     margin: 0 auto;
     position: relative;
+    padding-bottom: 20px;
 }
 
-/* --- LEGEND STYLES --- */
+/* --- LEGEND STYLES (Compact) --- */
 .pt-legend-container {
     display: flex;
-    justify-content: space-between;
-    align-items: flex-start;
-    gap: 4rem;
-    margin-bottom: 3rem;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    margin-bottom: 1rem;
     flex-wrap: wrap;
     background-color: #ffffff;
-    padding: 25px 40px;
-    border-radius: 12px;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-    max-width: 1100px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    max-width: 900px;
     margin-left: auto;
     margin-right: auto;
     border: 1px solid #eaeaea;
@@ -36,17 +38,17 @@ body {
 /* Left: Key Panel */
 .pt-key-panel {
     display: flex;
-    align-items: stretch; 
-    gap: 10px; 
+    align-items: center; 
+    gap: 15px; 
 }
 
 .pt-sample-element {
-    width: 110px;
-    height: 110px;
+    width: 80px; /* Smaller sample for legend */
+    height: 80px;
     pointer-events: none;
     box-shadow: none;
     transform: none !important;
-    padding: 4px !important;
+    padding: 2px !important;
 }
 
 /* Key Label Group */
@@ -54,10 +56,10 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    font-size: 0.85rem;
+    height: 75px;
+    font-size: 0.7rem;
     font-weight: 600;
     color: #495057;
-    padding: 2px 0;
 }
 
 .key-row {
@@ -76,37 +78,37 @@ body {
 .pt-category-panel {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 12px 20px;
+    gap: 5px 15px; /* Tighter layout */
 }
 
 .category-item {
     display: flex;
     align-items: center;
-    font-size: 0.9rem;
+    font-size: 0.75rem;
     font-weight: 500;
     color: #333;
 }
 
 .category-color-box {
-    width: 16px;
-    height: 16px;
+    width: 12px;
+    height: 12px;
     display: inline-block;
-    margin-right: 10px;
-    border-radius: 3px;
+    margin-right: 6px;
+    border-radius: 2px;
     border: 1px solid currentColor;
 }
 
 /* --- MAIN ELEMENT CARD STYLES --- */
 .periodic-element {
     aspect-ratio: 1 / 1;
-    border: 1px solid rgba(0, 0, 0, 0.15); /* Slightly darker border for contrast */
-    border-radius: 4px;
-    padding: 2px 4px;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 3px;
+    padding: 1px 2px; /* Minimal padding */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     cursor: pointer;
-    transition: transform 0.2s, background-color 0.2s, color 0.2s, z-index 0s;
+    transition: transform 0.15s, background-color 0.2s, z-index 0s;
     position: relative;
     background-color: #ffffff;
     color: #212529;
@@ -114,102 +116,91 @@ body {
 
 /* Hover Properties */
 .periodic-element:hover {
-    transform: scale(1.5);
-    z-index: 10;
+    transform: scale(1.8); /* Larger zoom so you can read the small text */
+    z-index: 100;
     box-shadow: 0 4px 15px rgba(0,0,0,0.3);
     border-color: #000;
 }
 
-/* Content Typography - Updated for larger text */
+/* Content Typography - Optimized for ~60px boxes */
 .atomic-number { 
-    font-size: 0.75rem; /* Increased from 0.65rem */
+    font-size: 0.55rem; 
     color: #495057; 
     line-height: 1;
+    margin-left: 2px;
 }
 
 .element-symbol { 
-    font-size: 1.4rem; /* Increased from 1.1rem */
-    font-weight: 800;  /* Extra bold */
+    font-size: 1.1rem; /* Still bold, but fits box */
+    font-weight: 800; 
     text-align: center;
-    line-height: 1;
-    margin-top: -2px;
+    line-height: 0.9;
+    margin-top: -1px;
 }
 
 .element-name {
-    font-size: 0.65rem; /* Increased from 0.5rem */
+    font-size: 0.45rem; /* Small but legible */
     text-align: center;
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     font-weight: 600;
-    line-height: 1.1;
+    line-height: 1;
 }
 
 .atomic-weight {
-    font-size: 0.65rem; /* Increased from 0.5rem */
+    font-size: 0.45rem;
     text-align: center;
     color: #495057;
     font-weight: 400;
     line-height: 1;
+    margin-bottom: 1px;
 }
 
-/* --- NEW VIBRANT COLOR PALETTE --- */
-/* Logic: Stronger Pastels for backgrounds + Darker borders */
-
-/* Alkali (Salmon Red) */
+/* --- VIBRANT COLOR PALETTE --- */
 .alkali { background-color: #ffadad; border-color: #e27d7d; }
 .alkali:hover { background-color: #e27d7d; color: #fff; }
 .alkali:hover .atomic-number, .alkali:hover .atomic-weight { color: #ffe6e6; }
 
-/* Alkaline Earth (Peach/Orange) */
 .alkaline-earth { background-color: #ffd6a5; border-color: #e0ac75; }
 .alkaline-earth:hover { background-color: #e0ac75; color: #fff; }
 .alkaline-earth:hover .atomic-number, .alkaline-earth:hover .atomic-weight { color: #fff5e6; }
 
-/* Transition Metals (Canary Yellow) */
 .transition { background-color: #fdffb6; border-color: #dadd88; }
 .transition:hover { background-color: #dadd88; color: #fff; }
 .transition:hover .atomic-number, .transition:hover .atomic-weight { color: #ffffe0; }
 
-/* Post-Transition (Mint Green) */
 .post-transition { background-color: #caffbf; border-color: #98d18a; }
 .post-transition:hover { background-color: #98d18a; color: #fff; }
 .post-transition:hover .atomic-number, .post-transition:hover .atomic-weight { color: #e8ffe0; }
 
-/* Metalloid (Cyan/Turquoise) */
 .metalloid { background-color: #9bf6ff; border-color: #6bc4cc; }
 .metalloid:hover { background-color: #4db8c2; color: #fff; }
 .metalloid:hover .atomic-number, .metalloid:hover .atomic-weight { color: #e0ffff; }
 
-/* Nonmetal (Sky Blue) */
 .nonmetal { background-color: #a0c4ff; border-color: #7296d1; }
 .nonmetal:hover { background-color: #5d87cc; color: #fff; }
 .nonmetal:hover .atomic-number, .nonmetal:hover .atomic-weight { color: #e6f0ff; }
 
-/* Noble Gases (Lavender/Purple) */
 .noble { background-color: #bdb2ff; border-color: #8c82cc; }
 .noble:hover { background-color: #7b6fcc; color: #fff; }
 .noble:hover .atomic-number, .noble:hover .atomic-weight { color: #f0ebff; }
 
-/* Lanthanides (Pink) */
 .lanthanide { background-color: #ffc6ff; border-color: #cc91cc; }
 .lanthanide:hover { background-color: #c772c7; color: #fff; }
 .lanthanide:hover .atomic-number, .lanthanide:hover .atomic-weight { color: #ffe6ff; }
 
-/* Actinides (Mauve/Deep Rose) */
-.actinide { background-color: #ff9fb8; border-color: #cc6f88; } /* More distinct reddish-pink */
+.actinide { background-color: #ff9fb8; border-color: #cc6f88; }
 .actinide:hover { background-color: #c94c6e; color: #fff; }
 .actinide:hover .atomic-number, .actinide:hover .atomic-weight { color: #ffe0e6; }
 
 /* Responsive adjustments */
 @media (max-width: 900px) {
     .periodic-table-grid {
-        grid-template-columns: repeat(18, minmax(35px, 1fr));
-        overflow-x: auto;
-        padding-bottom: 20px;
+        grid-template-columns: repeat(18, minmax(28px, 1fr));
+        overflow-x: auto; /* Scroll allowed only on mobile */
     }
-    .pt-legend-container { flex-direction: column; gap: 2rem; align-items: center; }
-    .pt-key-panel { width: 100%; justify-content: center; }
-    .element-symbol { font-size: 0.9rem; }
-    .element-name, .atomic-weight { display: none; }
+    .pt-legend-container { gap: 1rem; padding: 10px; }
+    .element-symbol { font-size: 0.8rem; }
+    .element-name, .atomic-weight { display: none; } /* Hide details on mobile */
 }

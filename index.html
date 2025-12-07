@@ -9,10 +9,10 @@
 </head>
 <body class="bg-light text-dark">
 
-    <div class="container-fluid p-4">
-        <header class="text-center mb-4">
-            <h1 class="display-4 fw-bold">The Periodic Table</h1>
-            <p class="lead text-secondary">By : Sairaj Anvekar</p>
+    <div class="container-fluid p-2">
+        <header class="text-center mb-2">
+            <h2 class="fw-bold m-0">The Periodic Table</h2>
+            <p class="text-secondary m-0" style="font-size: 0.8rem;">By : Sairaj Anvekar. </p>
         </header>
 
         <div class="pt-legend-container">
@@ -35,7 +35,7 @@
             <div class="pt-category-panel">
                 <div class="category-item"><span class="category-color-box alkali"></span> Alkali Metal</div>
                 <div class="category-item"><span class="category-color-box alkaline-earth"></span> Alkaline Earth</div>
-                <div class="category-item"><span class="category-color-box lanthanide"></span> Lanthanide (Rare Earth)</div>
+                <div class="category-item"><span class="category-color-box lanthanide"></span> Lanthanide</div>
                 <div class="category-item"><span class="category-color-box actinide"></span> Actinide</div>
                 <div class="category-item"><span class="category-color-box transition"></span> Transition Metal</div>
                 <div class="category-item"><span class="category-color-box post-transition"></span> Post-Transition</div>
@@ -52,36 +52,36 @@
     <div class="modal fade" id="elementDetailsModal" tabindex="-1" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title fw-bold" id="detailsModalLabel">Element Details</h5>
+                <div class="modal-header py-2">
+                    <h5 class="modal-title fw-bold fs-6" id="detailsModalLabel">Element Details</h5>
                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body text-center">
-                    <div id="details-modal-visual" class="periodic-element pt-sample-element mx-auto mb-4" style="transform: scale(1.2);">
+                    <div id="details-modal-visual" class="periodic-element pt-sample-element mx-auto mb-3" style="transform: scale(1.5);">
                         </div>
                     
-                    <div class="text-start px-4">
-                        <div class="row mb-2">
+                    <div class="text-start px-4 small">
+                        <div class="row mb-1">
                             <div class="col-6 text-muted">Name:</div>
                             <div class="col-6 fw-bold" id="details-name"></div>
                         </div>
-                        <div class="row mb-2">
+                        <div class="row mb-1">
                             <div class="col-6 text-muted">Atomic Number:</div>
                             <div class="col-6 fw-bold" id="details-number"></div>
                         </div>
-                        <div class="row mb-2">
+                        <div class="row mb-1">
                             <div class="col-6 text-muted">Atomic Weight:</div>
                             <div class="col-6 fw-bold" id="details-weight"></div>
                         </div>
-                        <div class="row mb-2">
+                        <div class="row mb-1">
                             <div class="col-6 text-muted">Category:</div>
                             <div class="col-6 fw-bold text-capitalize" id="details-category"></div>
                         </div>
                     </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                    <a href="#" id="wiki-link" target="_blank" class="btn btn-primary">Learn More</a>
+                <div class="modal-footer py-1">
+                    <button type="button" class="btn btn-sm btn-secondary" data-bs-dismiss="modal">Close</button>
+                    <a href="#" id="wiki-link" target="_blank" class="btn btn-sm btn-primary">Learn More</a>
                 </div>
             </div>
         </div>
